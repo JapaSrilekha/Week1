@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Blog Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f8;
+        }
+
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 2%;
+        }
+
+        
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;     
+            gap: 2%;
+            padding: 2%;
+            justify-content: center;
+        }
+
+        
+        .blog-card {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 2%;
+            flex: 1 1 300px;   
+            box-sizing: border-box;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .blog-card h3 {
+            color: #1e3a5f;
+            margin-top: 0;
+        }
+
+        .blog-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .blog-card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .blog-card button:hover {
+            background-color: #0056b3;
+        }
+
+        .blog-card:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+             
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Blog Homepage</h1>
+        <p>Latest Updates & Articles</p>
+    </header>
+
+    <main class="blog-container">
+
+        <div class="blog-card">
+            <h3>HTML Basics</h3>
+            <p>Learn the fundamentals of HTML and build structured web pages easily.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="blog-card">
+            <h3>CSS Styling Tips</h3>
+            <p>Improve your design skills with modern CSS techniques and layouts.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="blog-card">
+            <h3>Flexbox Guide</h3>
+            <p>Understand how Flexbox works and create responsive layouts effortlessly.</p>
+            <button>Read More</button>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Signal Simulator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+            background-color: antiquewhite;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn1 {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn2 {
+            background-color: yellow;
+            color: black;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn3 {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Traffic Signal Simulator</h2>
+
+    
+    <button class="btn1" onclick="showSignal('red')">Red</button>
+    <button class="btn2" onclick="showSignal('yellow')">Yellow</button>
+    <button class="btn3" onclick="showSignal('green')">Green</button>
+
+    <div id="result"></div>
+
+    <script>
+        function showSignal(signal) {
+
+            let message = "";
+
+            switch (signal) {
+
+                case "red":
+                    message = "Stop";
+                    break;
+
+                case "yellow":
+                    message = "Get Ready";
+                    break;
+
+                case "green":
+                    message = "Go";
+                    break;
+
+                default:
+                    message = "Invalid Signal";
+            }   
+            document.getElementById("result").innerHTML = message;
+        }
+    </script>
+
+</body>
+</html>

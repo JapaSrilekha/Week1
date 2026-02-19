@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Discount Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f8;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .card {
+            background: white;
+            width: 380px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        input {
+            padding: 8px;
+            width: 80%;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Simple Discount Calculator</h2>
+
+        <input type="number" id="amountInput" placeholder="Enter Purchase Amount">
+        <br>
+        <button onclick="calculateDiscount()">Calculate</button>
+
+        <div id="output" class="result"></div>
+    </div>
+
+    <script>
+        function calculateDiscount() {
+
+            
+            let amount = Number(document.getElementById("amountInput").value);
+
+            let discountRate = 0;
+
+            
+            if (amount >= 5000) {
+                discountRate = 0.20;
+            }
+            else if (amount >= 3000) {
+                discountRate = 0.10;
+            }
+            else {
+                discountRate = 0;
+            }
+
+         
+            let discountAmount = amount * discountRate;
+            let finalAmount = amount - discountAmount;
+
+         
+            document.getElementById("output").innerHTML =
+                "Purchase Amount: ₹" + amount + "<br>" +
+                "Discount Amount: ₹" + discountAmount + "<br>" +
+                "Final Payable Amount: ₹" + finalAmount;
+        }
+    </script>
+
+</body>
+</html>

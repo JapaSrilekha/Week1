@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile Manager</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 6px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin: 6px 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Student Profile Manager</h2>
+
+        
+        <input type="text" id="nameInput" placeholder="Enter Name"><br>
+        <input type="number" id="rollInput" placeholder="Enter Roll No"><br>
+        <input type="number" id="marksInput" placeholder="Enter Marks"><br>
+
+        <button id="createBtn">Create Profile</button>
+
+        <div class="card" id="profileCard"></div>
+    </div>
+
+    <script>
+
+        var student = {
+            name: "",
+            rollNo: "",
+            marks: ""
+        };
+
+        function updateStudentProfile(studentObj) {
+
+            var card = document.getElementById("profileCard");
+
+            card.innerHTML =
+                "<p><strong>Name:</strong> " + studentObj.name + "</p>" +
+                "<p><strong>Roll No:</strong> " + studentObj.rollNo + "</p>" +
+                "<p><strong>Marks:</strong> " + studentObj.marks + "</p>";
+        }
+
+        
+        function updateStudentData(name, roll, marks) {
+
+            student.name = name;
+            student.rollNo = roll;
+            student.marks = marks;
+
+            updateStudentProfile(student);
+        }
+
+        
+        document.getElementById("createBtn")
+            .addEventListener("click", function() {
+
+                var nameValue = document.getElementById("nameInput").value;
+                var rollValue = document.getElementById("rollInput").value;
+                var marksValue = document.getElementById("marksInput").value;
+
+                updateStudentData(nameValue, rollValue, marksValue);
+
+            });
+
+    </script>
+
+</body>
+</html>

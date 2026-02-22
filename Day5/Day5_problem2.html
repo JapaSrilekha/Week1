@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Info Display</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .container {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .info-box {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>User Information</h2>
+        <input type="text" id="nameInput" placeholder="Enter Name"><br>
+        <input type="number" id="ageInput" placeholder="Enter Age"><br>
+        <input type="text" id="cityInput" placeholder="Enter City"><br>
+
+        <button onclick="handleDisplay()">Display Info</button>
+
+        <div class="info-box">
+            <p id="name"></p>
+            <p id="age"></p>
+            <p id="city"></p>
+        </div>
+    </div>
+
+    <script>
+        function handleDisplay() {
+
+            
+            var nameValue = document.getElementById("nameInput").value;
+            var ageValue = document.getElementById("ageInput").value;
+            var cityValue = document.getElementById("cityInput").value;
+
+            
+            var user = {
+                name: nameValue,
+                age: ageValue,
+                city: cityValue
+            };
+
+            displayUserInfo(user);
+        }
+
+        function displayUserInfo(userObj) {
+
+           
+            document.getElementById("name").innerHTML = "Name: " + userObj.name;
+            document.getElementById("age").innerHTML = "Age: " + userObj.age;
+            document.getElementById("city").innerHTML = "City: " + userObj.city;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .counter-box {
+            background: white;
+            width: 300px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .increment {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .increment:hover {
+            background-color: #218838;
+        }
+
+        .reset {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .reset:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter-box">
+        <h2>Counter App</h2>
+        <h1 id="counterValue">0</h1>
+
+        <button id="incrementBtn" class="increment">Increment</button>
+        <button id="resetBtn" class="reset">Reset</button>
+    </div>
+
+    <script>
+
+        var counter = 0;
+
+       
+        function updateDisplay() {
+            document.getElementById("counterValue").innerHTML = counter;
+        }
+
+        function incrementCounter(step) {
+            counter = counter + step;   
+            updateDisplay();            
+        }
+
+        function resetCounter() {
+            counter = 0;
+            updateDisplay();
+        }
+
+        document.getElementById("incrementBtn")
+                .addEventListener("click", function() {
+                    incrementCounter(1);   
+                });
+
+        document.getElementById("resetBtn")
+                .addEventListener("click", function() {
+                    resetCounter();
+                });
+
+    </script>
+
+</body>
+</html>
